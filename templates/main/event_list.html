@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Wydarzenia</title>
+</head>
+<body>
+{% for event in object_list %}
+    <p>{{ event.name }}</p>
+    <p>{{ event.description }}</p>
+    <p>{{ event.start_date_time }}</p>
+    <p>{{ event.end_date_time }}</p>
+{% endfor %}
+</body>
+</html>
