@@ -1,14 +1,11 @@
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <title>Zaloguj</title>
-</head>
-<body>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">zaloguj</button>
-</form>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}Zaloguj{% endblock %}
+
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">zaloguj</button>
+    </form>
+{% endblock %}
