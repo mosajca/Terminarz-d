@@ -1,0 +1,20 @@
+.event {
+    border: 2px solid black;
+    margin-top: 5px;
+}
+
+.event, .top-div {
+    text-align: center;
+}
+
+.top-div a {
+    background-color: darkblue;
+    border: 2px solid black;
+    color: white;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px;
+    text-decoration: none;
+    width: 30%;
+}

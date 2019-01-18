@@ -4,13 +4,15 @@
 
 {% block content %}
     {% for event in object_list %}
-        <p>
-            <a href="/update/{{ event.id }}">aktualizuj</a>
-            <a href="/delete/{{ event.id }}">usuń</a>
-        </p>
-        <p>{{ event.name }}</p>
-        <p>{{ event.description }}</p>
-        <p>{{ event.start_date_time }}</p>
-        <p>{{ event.end_date_time }}</p>
+        <div class="event">
+            <p>
+                <a href="/update/{{ event.id }}">aktualizuj</a>
+                <a href="/delete/{{ event.id }}">usuń</a>
+            </p>
+            <p>{{ event.name }}</p>
+            <p>{{ event.description }}</p>
+            <p>{{ event.start_date_time }}</p>
+            <p>{{ event.end_date_time }}</p>
+        </div>
     {% endfor %}
 {% endblock %}

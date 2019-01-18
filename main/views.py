@@ -1,6 +1,10 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic import CreateView, ListView, UpdateView, DeleteView
+from django.views.generic import CreateView, ListView, UpdateView, DeleteView, TemplateView
 from main.models import Event
+
+
+class EventTemplateView(TemplateView):
+    template_name = 'main/index.html'
 
 
 class EventListView(LoginRequiredMixin, ListView):
