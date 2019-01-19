@@ -3,16 +3,27 @@
 {% block title %}Wydarzenia{% endblock %}
 
 {% block content %}
-    {% for event in object_list %}
-        <div class="event">
-            <p>
-                <a href="/update/{{ event.id }}">aktualizuj</a>
-                <a href="/delete/{{ event.id }}">usuń</a>
-            </p>
-            <p>{{ event.name }}</p>
-            <p>{{ event.description }}</p>
-            <p>{{ event.start_date_time }}</p>
-            <p>{{ event.end_date_time }}</p>
-        </div>
-    {% endfor %}
+    <main>
+        {% if day %}
+            <h2>{{ day|date:"l, d E Y" }}</h2>
+        {% else %}
+            <h2>{{ start_week|date:"l, d E Y" }} - {{ end_week|date:"l, d E Y" }}</h2>
+        {% endif %}
+        {% for event in object_list %}
+            <div class="event">
+                <p>{{ event.name }}</p>
+                <p>{{ event.description }}</p>
+                <p>Początek: {{ event.start_date_time }}</p>
+                <p>Koniec: {{ event.end_date_time }}</p>
+                <p>
+                    <a href="/update/{{ event.id }}">aktualizuj</a>
+                    <a href="/delete/{{ event.id }}">usuń</a>
+                </p>
+            </div>
+        {% endfor %}
+    </main>
+    <footer>
+        <a href="{{ request.path }}?n={{ prev }}">poprzedni</a>
+        <a href="{{ request.path }}?n={{ next }}">następny</a>
+    </footer>
 {% endblock %}

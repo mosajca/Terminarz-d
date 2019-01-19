@@ -5,19 +5,24 @@
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="{% static "main.css" %}">
+    <link rel="icon" href="{% static "favicon.ico" %}">
 </head>
 <body>
 {% if user.is_authenticated %}
-    <div class="top-div">
-        <a href="/events">Wydarzenia</a>
+    <header>
+        {% if request.path == '/events/' %}
+            <a href="/events/week">Wydarzenia</a>
+        {% else %}
+            <a href="/events">Wydarzenia</a>
+        {% endif %}
         <a href="/add">Dodaj</a>
         <a href="/logout">Wyloguj</a>
-    </div>
+    </header>
 {% else %}
-    <div class="top-div">
+    <header>
         <a href="/login">Zaloguj</a>
         <a href="/register">Zarejestruj</a>
-    </div>
+    </header>
 {% endif %}
 {% block content %}
 {% endblock %}

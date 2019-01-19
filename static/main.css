@@ -1,13 +1,18 @@
 .event {
     border: 2px solid black;
-    margin-top: 5px;
 }
 
-.event, .top-div {
+.event, header, footer {
+    margin-top: 5px;
     text-align: center;
 }
 
-.top-div a {
+h2 {
+    text-align: center;
+    width: 100%;
+}
+
+header a, footer a {
     background-color: darkblue;
     border: 2px solid black;
     color: white;
@@ -17,4 +22,15 @@
     padding: 5px;
     text-decoration: none;
     width: 30%;
+}
+
+main {
+    padding-bottom: 50px;
+}
+
+footer {
+    bottom: 5px;
+    max-height: 50px;
+    position: fixed;
+    width: 100%;
 }
