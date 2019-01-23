@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import include, path
 from django.views.generic import CreateView
+from main.notification import start
 from schedule.forms import RegisterForm
 from schedule.views import activate
 
@@ -32,3 +33,5 @@ urlpatterns = [
     path('activate/<int:uid>/<str:token>/', activate),
     path('', include('main.urls')),
 ]
+
+start()

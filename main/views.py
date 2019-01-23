@@ -78,7 +78,13 @@ class EventUpdateView(LoginRequiredMixin, UpdateView):
     success_url = '/events'
     template_name_suffix = '_update_form'
 
+    def get_queryset(self):
+        return super().get_queryset().filter(user=self.request.user)
+
 
 class EventDeleteView(LoginRequiredMixin, DeleteView):
     model = Event
     success_url = '/events'
+
+    def get_queryset(self):
+        return super().get_queryset().filter(user=self.request.user)

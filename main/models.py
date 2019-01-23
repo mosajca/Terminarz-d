@@ -8,3 +8,6 @@ class Event(models.Model):
     description = models.CharField(max_length=255, verbose_name='opis')
     start_date_time = models.DateTimeField(verbose_name='początek')
     end_date_time = models.DateTimeField(verbose_name='koniec')
+
+    class Meta:
+        ordering = ['start_date_time']
